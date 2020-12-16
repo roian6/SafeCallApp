@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">세이프콜</string>
+    <string name="base_url">https://unitaemin.run.goorm.io</string>
+    <string name="base_url_ncp">https://naveropenapi.apigw.ntruss.com</string>
+
+    <string name="main1_txt1">통화하기</string>
+    <string name="main1_txt2">연결중…</string>
+
+    <string name="main3_txt1" formatted="false">대화 패턴 - %s</string>
+
+    <string-array name="call_theme">
+        <item>테마 1</item>
+        <item>테마 2</item>
+    </string-array>
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isListening"
+            type="boolean" />
+        <variable
+            name="response"
+            type="String" />
+        <variable
+            name="speech"
+            type="String" />
+        <variable
+            name="type"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:background="@drawable/round_box"
+            android:backgroundTint="@color/materialGray1"
+            android:fontFamily="@font/nanumsquarer"
+            android:hint="타입을 지정해주세요"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:text="@={type}"
+            android:textColor="@color/materialDarkBlack"
+            android:visibility="@{!isListening}"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.95"
+            android:background="@drawable/round_top"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="36dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="36dp"
+            android:paddingBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:layout_width="36dp"
+                android:layout_height="6dp"
+                android:background="@drawable/round_box"
+                android:backgroundTint="@color/materialGray4" />
+
+            <TextView
+                android:id="@+id/txt_main_listening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="48dp"
+                android:fontFamily="@font/nanumsquarer"
+                android:text="듣고 있습니다..."
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="@{isListening, default=gone}" />
+
+            <TextView
+                android:id="@+id/txt_main_speech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/round_box_full"
+                android:elevation="4dp"
+                android:fontFamily="@font/nanumsquarer"
+                android:hint="Speech text"
+                android:padding="14dp"
+                android:text="@{speech}"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="@{!isListening}" />
+
+            <TextView
+                android:id="@+id/txt_main_response"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="36dp"
+                android:background="@drawable/round_box_full"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/nanumsquarer"
+                android:hint="Response text"
+                android:padding="14dp"
+                android:text="@{response}"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="18sp"
+                android:visibility="@{!isListening}" />
+
+            <ImageView
+                android:id="@+id/btn_main_mic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/circle"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:src="@drawable/ic_mic_black_24dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
